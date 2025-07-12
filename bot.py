@@ -29,9 +29,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if not content:
             raise Exception("לא נמצא תוכן.")
 
-        await update.message.reply_text(f"📄 סיכום:
+await update.message.reply_text(f"📄 סיכום:\n\n{content[:4000]}")
 
-{content[:4000]}")
     except Exception as e:
         logging.error(e)
         await update.message.reply_text("❌ שגיאה בקריאת המאמר.")
